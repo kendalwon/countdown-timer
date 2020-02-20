@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+.countdown-div {
+  width: 80%;
+  height: 200px;
+  background-color: #B8FFE9;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border-radius: 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.hidden {
+  display: none;
+}
+
+.title {
+  font-size: 24px;
+  position: relative;
+  top: 10px;
+}
+
+.timer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.timer-container {
+  margin: 0 30px 0 30px;
+}
+
+.timer-number {
+  margin: 10px 0 10px 0;
+}
+
+.timer-label {
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+.cancelButton {
+  width: 100px;
+  height: 30px;
+  margin: 10px auto;
+  border-radius: 5px;
+  font-size: 20px;
+  font-family: 'Montserrat', sans-serif;
+  display: block;
+}

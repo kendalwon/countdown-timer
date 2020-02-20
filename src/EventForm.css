@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+.form {
+  width: 80%;
+  height: 300px;
+  background-color: #B8FFE9;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.eventTitle, .eventDate, .eventTime, .startButton {
+  position: relative;
+  top: 50px;
+  width: 300px;
+  height: 30px;
+  margin: 20px auto;
+  border-radius: 5px;
+  font-size: 20px;
+  font-family: 'Montserrat', sans-serif;
+  display: block;
+}
+
+.startButton {
+  width: 100px;
+}
