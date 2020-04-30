@@ -12,23 +12,18 @@ class Countdown extends React.Component {
       seconds: 0,
       interval: 0
     }
-    this.cancelCountdown = this.cancelCountdown.bind(this);
   }
 
   componentDidMount() {
-    console.log("mounting");
     let interval = setInterval(() => this.countdown(), 1000);
     this.setState({interval: interval});
   }
 
-  countdown() {
-    console.log("counting down");
-    console.log(this.props.eventDate);
+  countdown = () => {
     let d, h, m, s;
     const currentTime = new Date();
     let currentTimeInMS = currentTime.getTime();
-    let date = new Date(this.props.eventDate) ;
-    console.log(date);
+    let date = new Date(this.props.eventDate);
     let eventTimeInMS = date.getTime() + 5*60*60*1000;
     if (this.props.eventTime !== 0) {
       const a = this.props.eventTime.split(':');
@@ -53,7 +48,7 @@ class Countdown extends React.Component {
     });
   }
 
-  cancelCountdown() {
+  cancelCountdown = () => {
     clearInterval(this.state.interval);
     this.setState({
       shown: false,
@@ -62,38 +57,39 @@ class Countdown extends React.Component {
   }
 
   render() {
-  return (
-    <>
-      {this.state.shown &&
-        <div id="countdown-div" className="countdown-div">
-          <h1 id="title" className="title">Countdown to: {this.props.eventTitle}</h1>
-          <div className="timer">
-            <div className="timer-container">
-              <h1 id="days" className="timer-number">{this.state.days}</h1>
-              <h2 id="days-label" className="timer-label">days</h2>
+    return (
+      <>
+        {this.state.shown &&
+          <div id="countdown-div" className="countdown-div">
+            <h1 id="title" className="title">Countdown to: {this.props.eventTitle}</h1>
+            <div className="timer">
+              <div className="timer-container">
+                <h1 id="days" className="timer-number">{this.state.days}</h1>
+                <h2 id="days-label" className="timer-label">days</h2>
+              </div>
+              <div className="timer-container">
+                <h1 id="hours" className="timer-number">{this.state.hours}</h1>
+                <h2 id="hours-label" className="timer-label">hours</h2>
+              </div>
+              <div className="timer-container">
+                <h1 id="minutes" className="timer-number">{this.state.minutes}</h1>
+                <h2 id="minutes-label" className="timer-label">minutes</h2>
+              </div>
+              <div className="timer-container">
+                <h1 id="seconds" className="timer-number">{this.state.seconds}</h1>
+                <h2 id="seconds-label" className="timer-label">seconds</h2>
+              </div>
             </div>
-            <div className="timer-container">
-              <h1 id="hours" className="timer-number">{this.state.hours}</h1>
-              <h2 id="hours-label" className="timer-label">hours</h2>
-            </div>
-            <div className="timer-container">
-              <h1 id="minutes" className="timer-number">{this.state.minutes}</h1>
-              <h2 id="minutes-label" className="timer-label">minutes</h2>
-            </div>
-            <div className="timer-container">
-              <h1 id="seconds" className="timer-number">{this.state.seconds}</h1>
-              <h2 id="seconds-label" className="timer-label">seconds</h2>
-            </div>
-          </div>
-          <button 
-            id="cancelButton" 
-            className="cancelButton" 
-            type="button" 
-            onClick={this.cancelCountdown}>Cancel</button>
-        </div> 
-      }
-    </>
-  )}
+            <button 
+              id="cancelButton" 
+              className="cancelButton" 
+              type="button" 
+              onClick={this.cancelCountdown}>Cancel</button>
+          </div> 
+        }
+      </>
+    )
+  }
 }
 
 export default Countdown;
