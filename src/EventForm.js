@@ -9,10 +9,9 @@ class EventForm extends React.Component {
       eventFormShown: true,
       events: []
     }
-    this.addAnotherEvent = this.addAnotherEvent.bind(this);
   }
   
-  newEvent(e) {
+  newEvent = (e) => {
     e.preventDefault();
     let title = e.target.eventTitle.value;
     let date = e.target.eventDate.value;
@@ -35,7 +34,7 @@ class EventForm extends React.Component {
     });
   }
   
-  addAnotherEvent() {
+  addAnotherEvent = () => {
     this.setState({
       eventFormShown: true
     });
